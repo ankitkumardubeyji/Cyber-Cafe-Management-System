@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    <a href="/compose" style="color:white">Give feedback</a>
+</div>
+</div>
+
+<% if(compose==true) {%>
+    <div class="popup" id="popup">
+        <img src=<%= src %> alt="">
+        <h2><%= err %></h2>
+        <p> <%= errormsg %></p>
+        <button type="button" onclick="closePopup()">Ok</button>
+    </div>
+
+    <script>
+        let popup = document.getElementById("popup");
+    
+        
+    
+        function closePopup(){
+            popup.classList.add("close-popeup");
+        }
+    </script>
+
+    <% } %>
+<p><%=homeContent %></p>
+<%posts.forEach((item)=>{%>
+    <%#  to delete the data if the user clicks on the checkbox %>
+    <div class="box" style="color: white;">
+    <form action="/deletefd" method ="post">
+    <input type="checkbox" name="checkBox" onchange="this.form.submit() " value="<%=item._id %>">
+   </form>
+   <h1><%= item.title %> <%= item.time %> ></h1> 
+    </div>
+  
+   <p style="color: white;"><%= item.body %></p> <%# showing only the first hundred characters , assigning the every anchor tag its specif route , passing the title route value to the postname after the posts/ , wha pe app.js ,mai to hum log posts/title ks sath hi na humlog respective tile page mai navigate kar rhe thai na. , agar hum ejs tag ka andar value passs hi krte , toh rather item.title ka value k wajah item.title hi pass ho jata . %> 
+    <%})%>
+
+   
+
+
+
+<%-include("partials/footer.ejs") %>
+<a href="/userhome">HomePage</a>
+</div>
+
+
+
+</body>
+</html>

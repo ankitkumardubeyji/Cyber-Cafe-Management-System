@@ -1,0 +1,60 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    You are not Logged in.
+</div>
+</div>
+
+<div class="ghar">
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+          
+            <div class="card-body">
+                <form action="/forget-password" method="post">
+                  
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name">
+                     </div>
+
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" name="role"> 
+                 </div>
+
+
+
+                 <button type="submit" class="btn btn-dark">Submit</button>
+                 <a href="/register">Not Registered Register</a>
+                 
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <% if(errors==true){ %>
+    <span class="popup">  <%= errormsg %></span>
+   
+    <% } %>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

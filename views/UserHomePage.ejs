@@ -1,0 +1,169 @@
+<%- include("partials/header.ejs") %>
+<div class="links">
+<a href="/me">Profile</a>
+<a href="/contact">Contact</a>
+<a href="/feedback">Feedback</a>
+<a href="/bookComputer">BookComputer</a>
+</div>
+
+<div class="nav-message">
+    You are Logged in as  <span class="highlight"><%= username %></span>
+</div>
+
+</div>
+
+<% if(register==true ){ %>>
+<div class="popup" id="popup1">
+  <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+  <h2><%= err %></h2>
+  <p> <%= errormsg %></p>
+  <button type="button" onclick="closePopup1()">Ok</button>
+</div>
+<% } %>
+
+<% if(leave==true){ %>>
+  <div class="popup" id="popup2">
+    <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+    <h2><%= err %></h2>
+    <p> <%= errormsg %></p>
+    <button type="button" onclick="closePopup2()">Ok</button>
+  </div>
+  <% } %>
+
+  <% if(logout==true){ %>>
+    <div class="popup" id="popup3">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+      <h2><%= err %></h2>
+      <p> <%= errormsg %></p>
+      <button type="button" onclick="closePopup3()">Ok</button>
+    </div>
+    <% } %>
+
+    <% if(login==true){ %>>
+      <div class="popup" id="popup6">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+        <h2><%= err %></h2>
+        <p> <%= errormsg %></p>
+        <button type="button" onclick="closePopup6()">Ok</button>
+      </div>
+      <% } %>
+
+    <script>
+      function closePopup1(){
+  let popup = document.getElementById("popup1");
+  console.log("hine ale");
+  popup.classList.add("close-popeup");
+}
+
+function closePopup2(){
+  let popup = document.getElementById("popup2");
+  console.log("hine ale");
+  popup.classList.add("close-popeup");
+}
+
+
+function closePopup3(){
+  let popup = document.getElementById("popup3");
+  console.log("hine ale");
+  popup.classList.add("close-popeup");
+}
+
+function closePopup6(){
+  let popup = document.getElementById("popup6");
+  console.log("hine ale");
+  popup.classList.add("close-popeup");
+}
+    </script>
+
+
+<% if(book==true){ %>>
+  <div class="popup" id="popup4">
+    <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+    <h2><%= err %></h2>
+    <p> <%= errormsg %></p>
+    <button type="button" onclick="closePopup4()">Ok</button>
+  </div>
+  
+  
+
+    
+    <div class="card" style="width: 18rem; background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;" id="ok">
+        <img src="/profile.png" class="card-img-top" alt="..."> <%# path should always be given wrt to the public folder %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">You have Booked the computer..</p>
+        </div>
+        <ul class="list-group list-group-flush" style="color: black;">
+          <li class="list-group-item"> Name :<span style="text-decoration: underline; "><%=name %></span></li>
+          <li class="list-group-item" > Time <span id ="time" style="text-decoration: underline; "></span></li>
+          <li class="list-group-item"> Duration: <span id="ata"><%=at%></span style="text-decoration: underline; "></li>
+          <li class="list-group-item"> UptoTime <span><%=upto %></span style="text-decoration: underline; "></li>
+            <div id="mydiv" data-test =<%= at%>></div>
+        </ul>
+        
+        <div class="card-body">
+          <form action="/leave/<%= id %>" method="post">
+          <button type="submit" class="btn btn-dark">Leave</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="popup5" style="visibility: hidden;">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+      <h2>Join Again ! </h2>
+      <p> Your session has expired</p>
+      <button type="button" onclick="closePopup5()">Ok</button>
+    </div>
+
+    <script>
+
+
+
+
+
+function closePopup4(){
+  let popup = document.getElementById("popup4");
+  console.log("hine ale");
+  popup.classList.add("close-popeup");
+}
+
+function closePopup5(){
+  let popup = document.getElementById("popup5");
+  console.log("hine gale");
+  popup.classList.add("close-popeup");
+  document.getElementById("popup5").style.visibility="hidden";
+  console.log(popup);
+}
+   
+   setInterval( updateTime,1000); 
+    //import {endTime} from "../components/BookComputer.js";
+
+    var test = document.getElementById("ata").innerHTML;
+    function end(){
+      console.log("hinhe");
+      document.getElementById("time").style.color="green";
+      document.getElementById("ok").style.display="none";
+      document.getElementById("mydiv").innerHTML = test;
+      document.getElementById("popup5").style.visibility="visible";
+      console.log(   document.getElementById("popup5").style.visibility="visible");
+      
+
+      
+    }
+    setTimeout(end,parseInt(test)*60000);
+    function updateTime(){
+         
+         
+          document.getElementById("time").innerHTML = new Date().toLocaleTimeString().substr(0, 7);
+          
+    
+    }
+   </script>
+
+    <% } %>
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

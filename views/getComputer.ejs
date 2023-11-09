@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    <h1>Admin User</h1>
+</div>
+</div>
+<p>List of all the computers avilable</p>
+<p class="add" style="background: #4d4dff; padding: 1vw;"><a href="/create">Add Computers</a></p>
+<% if(added==true){ %>
+<div class="popup" id="popup">
+  <img src=<%= src %> alt="">
+  <h2><%= err %></h2>
+  <p> <%= errormsg %></p>
+  <button type="button" onclick="closePopup()">Ok</button>
+</div>
+
+
+<script>
+let popup = document.getElementById("popup");
+
+
+
+function closePopup(){
+  popup.classList.add("close-popeup");
+}
+</script>
+
+<% } %>
+
+
+ 
+ 
+ >
+
+<div class="bahar" >
+<%posts.forEach((item)=>{%>
+    <div class="card" id="special"  style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;">
+        
+        <div class="card-body">
+          <h5 class="card-title">Computer id : <%= item._id %></h5>
+          <p class="card-text"></p> <%= item.description %></p>
+        </div>
+        <ul class="list-group list-group-flush" style="color: black;">
+          <li class="list-group-item"> Title : <span><%=item.title %></span></li>
+          <li class="list-group-item"> ComputersFree: <span><%=item.numberofComputers %></span></li>
+          <li class="list-group-item"> Category: <span><%=item.category %></span></li>
+          <li class="list-group-item"> Added By:  <span><%=item.createdBy %></span></li>
+          <a href="update/<%=item._id %>" style="color: white; background: #4d4dff; padding: 0.5vw; margin: 1vh 0;" >Update Details</a>
+          <a href="deleteComputers/<%=item._id %>" style="color:white; background: #4d4dff; padding: 0.5vw;" >Delete Computer</a>   
+        </ul>
+
+        
+     
+        
+      </div>
+      <%})%>
+    </div>
+
+<%-include("partials/footer.ejs") %>
+<a href="/Adminhome">HomePage</a>
+</div>
+
+</body>
+</html>

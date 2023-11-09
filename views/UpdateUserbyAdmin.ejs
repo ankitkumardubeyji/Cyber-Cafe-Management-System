@@ -1,0 +1,71 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    You are Logged in.
+</div>
+</div>
+<h1> Enter the value for the fields you wanna update</h1>
+
+y
+
+<div class="ghar">
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+          
+            <div class="card-body">
+                <form action="/updateUsers/<%=params %>" method="post">
+                  
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name">
+                     </div>
+
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" name="password"> 
+                 </div>
+
+                 <div class="form-group">
+                    <label for="mobile">Mobile No</label>
+                    <input type="text" class="form-control" name="mobile"> 
+                 </div>
+
+                 <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" name="role"> 
+                 </div>
+
+
+                 <button type="submit" class="btn btn-dark">Update</button>
+                 <a href="/Adminhome">Home Page</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <% if(errors==true){ %>
+    <h1 class="popup">  <%= errormsg %></h1>
+   
+    <% } %>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

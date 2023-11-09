@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+<div class="links">
+<a href="/me">Profile</a>
+<a href="/contact">Contact</a>
+<a href="/feedback">Feedback</a>
+<a href="/computers">Computer Details</a>
+</div>
+
+<div class="nav-message">
+    You are Logged in as  <span class="highlight"><%= username %>.</span>
+</div>
+
+
+
+</div>
+<div class="flex">
+    <div class="dibba">
+        <a href="/regusers">Registered Users :<%= registeredUser %></a> 
+    </div>
+    
+    <div class="dibba">
+        <a href="/users"></a> Active Users :<%=  activeUser %>
+    </div>
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+<% if(login==true) {%>
+<div class="popup" id="popup">
+    <img src="https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123" alt="">
+    <h2><%= err %></h2>
+    <p> <%= errormsg %></p>
+    <button type="button" onclick="closePopup()">Ok</button>
+</div>
+
+<script>
+    let popup = document.getElementById("popup");
+
+    
+
+    function closePopup(){
+        popup.classList.add("close-popeup");
+    }
+</script>
+<% } %>
+</body>
+</html>

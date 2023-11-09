@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    You are not Logged in.
+</div>
+</div>
+
+<div class="ghar">
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card"style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white; width: 40vw; margin-top:14vh ;">
+          
+            <div class="card-body">
+                <form action="/UserLogin" method="post" style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white; width: 40vw;">
+                  
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name">
+                     </div>
+
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" name="password"> 
+                 </div>
+
+
+
+                 <button type="submit" class="btn btn-dark">Login</button>
+                 <a href="/register" style="color: antiquewhite; margin-left: 1vw; background: #343a40;; padding: 0.5vw;">Register</a>
+                 <a href="/forget" style="color: antiquewhite;  margin-left: 1vw; background: #343a40;; padding: 0.5vw;">Forgot</a>
+                 
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <% if(errors==true){ %>
+    <span class="popup">  <%= errormsg %></span>
+   
+    <% } %>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

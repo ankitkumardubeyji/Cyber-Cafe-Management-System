@@ -1,0 +1,68 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    You are Logged in.
+</div>
+</div>
+<h1> Select the service you want !</h1>
+
+
+
+<div class="ghar">
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+          
+            <div class="card-body" style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;">
+                <form action="/bookComputer" method="post">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email">
+                     </div>
+                     <label class="input-group-text" for="inputGroupSelect01" name="option">Select the computer you want</label>
+                        <select class="form-select" id="inputGroupSelect01" name="option_selected">
+                            <%posts.forEach((item)=>{%>
+                            <option value="<%=item._id %>" name="ankit"><%= item.title %></option>
+                            <% }) %>
+                            
+                        </select>
+
+                     <div class="form-group">
+                        <label for="description">Time duration</label>
+                        <input type="text" class="form-control" name="minutes">
+                     </div>
+
+                     <div class="form-group">
+                        <label for="category">Purpose</label>
+                        <input type="text" class="form-control" name="Purpose">
+                     </div>
+
+
+
+                 <button type="submit" class="btn btn-dark">Create</button>
+                 <a href="/userhome" style="color: white;">Home Page</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <% if(errors==true){ %>
+    <h1 class="popup">  <%= errormsg %></h1>
+   
+    <% } %>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

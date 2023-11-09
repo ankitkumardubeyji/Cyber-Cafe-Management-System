@@ -1,0 +1,68 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+    You are not Logged in.
+</div>
+</div>
+<div class="ghar">
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card" style="width: 18rem; background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white; width: 30vw">
+          
+            <div class="card-body";>
+                <form action="/update" method="post" style="width: 18rem; background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white; width: 30vw" enctype="multipart/form-data">
+                  
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" value="<%= name %>">
+                     </div>
+
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" value="<%= email %>">
+                 </div>
+
+                 
+
+                 <div class="form-group">
+                    <label for="mobile">Mobile No</label>
+                    <input type="text" class="form-control" name="mobile" value="<%= mobile %>"> 
+                 </div>
+
+                 <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" name="role" value="<%= role %>"> 
+                 </div>
+                 <div class="form-group">
+                    <label for="image">Profile Image</label>
+                    <input type="file" class="form-control" name="image"> 
+                 </div>
+
+
+                 <button type="submit" class="btn btn-dark">Update</button>
+                 <a href="/login">Already Registered Login</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+ <% if(errors==true){ %>
+    <h1 class="popup">  <%= errormsg %></h1>
+   
+    <% } %>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+</div>
+
+</body>
+</html>

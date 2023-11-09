@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<div class="title">
+  <h1> Cyber Cafe Management System</h1>
+</div>
+
+<div class="nav-message">
+  You are Logged in as  <span class="highlight"><%= name %>.</span>
+</div>
+</div>
+
+<div class="card" style="width: 18rem; background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white; width: 40vw; ">
+    <img src="/<%= image %>" class="card-img-top" alt="..." width="50%" style="margin-left: 15vw;"> <%# path should always be given wrt to the public folder %>
+    <div class="card-body" style="width: 40vw; background: linear-gradient(rgba(0,0,0,0.6),#4d4dff)">
+      <h5 class="card-title" style="color: burlywood;"><%= name %></h5>
+      <p class="card-text" style="color: burlywood;">Click on the update Button to update your profile</p>
+    </div>
+    <ul class="list-group list-group-flush" style="color: black;">
+      <li class="list-group-item"> Name : <span><%=name %></span></li>
+      <li class="list-group-item"> Email : <span><%=email %></span></li>
+      <li class="list-group-item"> Mobile: <span><%=mobile %></span></li>
+      <li class="list-group-item"> Role :  <span><%=role %></span></li>
+    </ul>
+    
+    <div class="card-body">
+      <a href="/update" class="card-link" style="color: white; background: #4d4dff; padding: 1vw;" >Update Profile</a>
+      <% if(role=='USER') {%>
+      <a href="/userhome" class="card-link" style="color: white; background: #4d4dff; padding: 1vw;" >Go to Home Page</a>
+      <% } %>
+      <% if(role=='ADMIN') {%>
+        <a href="/Adminhome" class="card-link" style="color: white; background: #4d4dff; padding: 1vw;" >Go to Home Page</a>
+      <% } %>
+    </div>
+  </div>
+
+
+  <%- include("partials/footer.ejs") %>
+  <a href="/logOut">LogOut</a>
+</div>
+
+</body>
+</html>
