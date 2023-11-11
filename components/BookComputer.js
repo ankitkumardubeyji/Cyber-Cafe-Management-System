@@ -13,8 +13,8 @@ const BookComputer = async(req,res)=>{
    await user.save();
    
    var min = parseInt(minutes);
-   const date = new Date();
-endtime = new Date(date.getTime()+(min*60000)).toLocaleTimeString().substr(0, 7);
+ const date = new Date();
+endtime = new Date(date.getTime()+(2*60000)).toLocaleTimeString().substr(0, 7);console.log(endtime);
   user.end=endtime;
     console.log(endtime);
     console.log(user.end);
