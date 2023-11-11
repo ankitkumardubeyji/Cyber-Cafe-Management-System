@@ -9,10 +9,10 @@ const connectionToDB= async()=>{
     // db connect ho jyega uske baad response ayega 
        `mongodb+srv://ankitdubey1570:SZmY4RYB2Hr5QKPl@cluster0.85nrtrt.mongodb.net/?retryWrites=true&w=majority`,{
            useNewUrlParser:true,
-           useCreateIndex:true,
+          
            useUnifiedTopology:true,
             useNewUrlParser: true,
-           useFindAndModify:false,
+           
            
 
        }
