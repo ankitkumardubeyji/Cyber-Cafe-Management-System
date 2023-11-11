@@ -7,7 +7,7 @@ const connectionToDB= async()=>{
     try{
     const {connection } = await mongoose.connect(  // database connection asynchronously work krta hai ie , jab call successfull ho jyega
     // db connect ho jyega uske baad response ayega 
-        `mongodb+srv://ankitdubey1570:Ankit9955449091@cluster0.c2qlznv.mongodb.net/?retryWrites=true&w=majority` 
+        `mongodb://0.0.0.0:27017/lms`
 
 
     );
