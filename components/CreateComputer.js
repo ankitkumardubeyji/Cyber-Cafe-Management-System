@@ -106,6 +106,7 @@ const deleteComputer = asyncHandler(async (req, res, next) => {
       posts:computers, // key is the variable in the ejs file jaske endar value pas hoga 
       date: new Date().getFullYear(),
       errors:true,
+        added:false,
       errormsg:"successfully deleted the computer with title as"+deleted,
       
   });
