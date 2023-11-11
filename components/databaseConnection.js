@@ -11,7 +11,10 @@ const connectionToDB= async()=>{
            useNewUrlParser:true,
            useCreateIndex:true,
            useUnifiedTopology:true,
-           useFindAndModify:false
+            useNewUrlParser: true,
+           useFindAndModify:false,
+           
+
        }
 
 
