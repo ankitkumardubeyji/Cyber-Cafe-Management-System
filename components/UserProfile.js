@@ -17,7 +17,7 @@ import User from "./userSchema.js";
             date: new Date().getFullYear(),
             image:user.image,
         }
-        res.render("about.ejs",data);
+        res.render("About.ejs",data);
 
       }
       catch(e){
