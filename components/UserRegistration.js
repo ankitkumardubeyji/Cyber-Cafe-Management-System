@@ -20,7 +20,7 @@ const register = async(req,res)=>{
                     errormsg:"All fields required ",
                 }
 
-            res.render("registerPage.ejs",data);
+            res.render("index.ejs",data);
             }
         try{
     const userExists = await User.findOne({ email });
@@ -39,7 +39,7 @@ const register = async(req,res)=>{
 
        
 
-        res.render("registerPage.ejs",data);
+        res.render("index.ejs",data);
       }
 
       console.log("here");
@@ -117,7 +117,7 @@ const register = async(req,res)=>{
 
        
 
-        res.render("registerPage.ejs",data);
+        res.render("index.ejs",data);
     }
 }
 
