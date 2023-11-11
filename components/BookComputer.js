@@ -63,29 +63,9 @@ endtime = new Date(date.getTime()+(min*60000)).toLocaleTimeString().substr(0, 7)
         res.render("UserHomePage.ejs",data);
     }
     else{
-        const data = {
-            date:new Date().getFullYear(),
-            username:"ankit",
-            leave:true,
-        register:false,
-        book:false,
-        logout:false,
-        login:false,
-            errormsg:"No avilable computer",
-            err:"sorry!",
-            src:"https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123",
-            at:min,
-            name:computer.title,
-            upto:endtime,
-            id:user._id,
-
-        }
-        console.log("here");
-        res.render("UserHomePage.ejs",data);
+        console.log("haat bsdk computer hi chalayega");
     }
-       
-    }
-
+}
 
 export default BookComputer;
 
