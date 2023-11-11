@@ -7,7 +7,7 @@ const connectionToDB= async()=>{
     try{
     const {connection } = await mongoose.connect(  // database connection asynchronously work krta hai ie , jab call successfull ho jyega
     // db connect ho jyega uske baad response ayega 
-        `mongodb://127.0.0.1/ccms`
+        `mongodb://localhost:27017/ccms`
     );
 
     if(connection){
