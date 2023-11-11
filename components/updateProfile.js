@@ -30,7 +30,7 @@ const updateUser = async(req,res,next) =>{
     date: new Date().getFullYear(),
     image:user.image,
 }
-res.render("about.ejs",data);
+res.render("About.ejs",data);
 
 
 
