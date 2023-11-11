@@ -61,7 +61,7 @@ app.get("/",(req,res)=>{
         date:new Date().getFullYear(),
         errors:false,
     }
-        res.render("registerPage.ejs",data);
+        res.render("index.ejs",data);
     });
 
     app.get("/register",(req,res)=>{
