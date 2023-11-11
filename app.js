@@ -32,7 +32,7 @@ import BookComputer, { leaveComputer } from "./components/BookComputer.js";
 
 import createUser, { UpdateUserbyAdmin, deleteUser } from "./components/CreateUserbyAdmin.js";
 import { allowedNodeEnvironmentFlags } from "process";
-import createOrder from "./components/payment.js";
+
 
 
 const app = express();
@@ -186,7 +186,7 @@ app.post("/reset-password/:resetToken",ResetPassword);
 //app.post("/update", isLoggedin, updateUser);
 
 //app.get('/payment',PaymentRenderPage);
-app.post('/createOrder',createOrder);
+//app.post('/createOrder',createOrder);
 
 
 //---------------- feedback
