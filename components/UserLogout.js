@@ -13,7 +13,7 @@ const LogOut = async(req,res)=>{
     err:"Thank You!",
     src:"https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123"
   }
-  res.render("registerPage.ejs",data);
+  res.render("index.ejs",data);
 
 }
 
