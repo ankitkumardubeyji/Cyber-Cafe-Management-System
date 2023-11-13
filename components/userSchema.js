@@ -11,7 +11,6 @@ const userSchema = new Schema(
         type: String,
         required: [true, 'Name is required'], // message popped if name not entered 
         minlength: [5, 'Name must be at least 5 characters'],
-        lowercase: true,  // name always gets stored in the lowercase in the database 
         trim: true, // Removes unnecessary spaces
       },
       email: {
