@@ -45,7 +45,7 @@ const forgetPassword = asyncHandler(async (req, res, next) => {
     await user.save();
     console.log("ok");
   
-    const resetPasswordUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`
+    const resetPasswordUrl = `cyber-cafe-management-system.onrender.com/reset-password/${resetToken}`
     console.log(process)
     //console.log(process.env.FRONTEND_URL);
   
