@@ -61,10 +61,14 @@ const ResetPassword = asyncHandler(async(req,res)=>{
     // Sending the response when everything goes good
 
     const data = {
+       const data = {
       date:new Date().getFullYear(),
       errors:true,
       errormsg:"Password updated please relogin!",
       params:resetToken,
+      err:"Please remember the password",
+      reset:true,
+  }
   }
 
 res.render("loginPage.ejs",data);
