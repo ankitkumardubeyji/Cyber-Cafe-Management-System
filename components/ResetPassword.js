@@ -60,7 +60,7 @@ const ResetPassword = asyncHandler(async(req,res)=>{
   
     // Sending the response when everything goes good
 
-    const data = {
+
        const data = {
       date:new Date().getFullYear(),
       errors:true,
@@ -69,7 +69,7 @@ const ResetPassword = asyncHandler(async(req,res)=>{
       err:"Please remember the password",
       reset:true,
   }
-  }
+  
 
 res.render("loginPage.ejs",data);
       
