@@ -133,6 +133,7 @@ body{
     height: 100px;
     padding: 20px;
     border-radius: 10px;
+    top:10vw;
     
 }
 
@@ -385,6 +386,8 @@ body{
     height: 100px;
     padding: 20px;
     border-radius: 10px;
+    position: relative;
+    top:10vw;
     
 }
 
@@ -492,4 +495,3 @@ body{
 
 }
 }
-
