@@ -26,6 +26,8 @@ const login = async(req,res)=>{
                     date:new Date().getFullYear(),
                     errors:true,
                     errormsg:"Enter the correct password",
+                    err:"Sorry",
+                    src:"https://tse4.mm.bing.net/th?id=OIP.adi_Lh7frVZg-SaO8gwQBwHaHa&pid=Api&P=0&h=180",
                 }
                 res.render("loginPage.ejs",data);
 
@@ -173,6 +175,8 @@ const login = async(req,res)=>{
                     date:new Date().getFullYear(),
                     errors:true,
                     errormsg:"No such Account Registered ",
+                    err:"sorry",
+                    src:"https://tse4.mm.bing.net/th?id=OIP.adi_Lh7frVZg-SaO8gwQBwHaHa&pid=Api&P=0&h=180",
                 }
                 res.render("loginPage.ejs",data);
             }
