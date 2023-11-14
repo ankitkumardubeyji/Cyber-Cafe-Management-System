@@ -362,6 +362,17 @@ app.get('/regusers',async(req,res)=>{
       
       
   });
+    app.get('/active',async(req,res)=>{
+  const user = await User.find({}).select('-password'); // select  everything dont display any information about particular computer 
+  const comp = await Computer.find({title:user.computer});
+  res.render("ActiveUser.ejs",{
+      posts:user, // key is the variable in the ejs file jaske endar value pas hoga 
+      date: new Date().getFullYear(),
+      errors:false,
+      id:comp._id;
+      
+      
+  });
 
   app.get('/createUser',(req,res)=>{
     console.log("here in ");
