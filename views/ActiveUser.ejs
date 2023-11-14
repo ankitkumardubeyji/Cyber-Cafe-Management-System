@@ -1,1 +1,50 @@
+<%- include("partials/header.ejs") %>
+<div class="title">
+    <h1> Cyber Cafe Management System</h1>
+</div>
 
+<div class="nav-message">
+    <h1>Admin User</h1>
+</div>
+</div>
+<p>List of all the computers avilable</p>
+<p class="add"><a href="/createUser">Add User</a></p>
+<% if(errors==true){ %>
+  <h1 class="popper" style="margin-top: 70px;">  <%= errormsg %></h1>
+ 
+  <% } %>
+
+<div class="bahar" >
+  
+<%posts.forEach((item)=>{
+    if(item.role=="USER" && item.active==true){
+    %>
+    <div class="card" id="special"   style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;>
+        <img src="/GI.png" class="card-img-top" alt="..."> <%# path should always be given wrt to the public folder %>
+        
+        <div class="card-body">
+          <h5 class="card-title">User Details</h5>
+          
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Name : <span><%=item.name %></span></li>
+          <li class="list-group-item"> Email: <span><%=item.email %></span></li>
+          <li class="list-group-item"> Mobile: <span><%=item.mobile %></span></li>
+          <li class="list-group-item"> Role:  <span><%=item.role %></span></li>  
+           <li class="list-group-item"> Role:  <span><%=item.computer %></span></li> 
+          <a href="updateUsers/<%=item._id %>">Update Details</a>
+          <a href="deleteUsers/<%=item._id %>">Delete Computer</a>
+         
+        </ul>
+
+        
+      </div>
+      <%}})%>
+    </div>
+
+<%-include("partials/footer.ejs") %>
+<a href="/userhome">HomePage</a>
+</div>
+
+</body>
+</html>
