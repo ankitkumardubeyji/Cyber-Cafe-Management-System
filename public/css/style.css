@@ -249,6 +249,110 @@ body{
 
 
 
+/* css exclusive for contact section*/
+
+
+
+
+
+.columns{
+    display: flex;
+    margin-top: 70px;
+    
+}
+
+
+
+.pinfo h1{
+    font-size:60px;
+    font-weight:500;
+}
+
+.pinfo{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    flex-basis: 35%;
+    
+}
+
+.pinfo .social-icons{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.pinfo i{
+    color:#ff004f;
+    margin-right: 10px;
+    flex-basis: 35%;
+}
+
+.contact-right{
+    flex-basis: 60%;
+    overflow: hidden;
+
+}
+.social-icons i{
+    text-decoration: none;
+    font-size: 30px;
+    transition: transform 0.5s;
+    color: white;
+    margin-right: 10px;
+}
+
+.social-icons i:hover{
+    transform: translateY(-10px);
+    color: #ff004f;
+}
+
+.btn1{
+    background: #3E424B;
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    padding: 14px 50px;
+    display: inline;
+    border-radius: 6px;
+    width: 220px;
+    overflow: hidden;
+}
+
+.form1{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.contact-right .form1{
+    width: 100%;
+   
+}
+
+.form1 input,.form1 textarea{
+    width:100%;
+    border:0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color:black;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+nav .fas{
+    display: none;
+}
+
+
+
+
+
+
+
+
 @media (min-width:200px) and   (max-width:1200px){
 body{
     background-image: url(bg.jpg);
