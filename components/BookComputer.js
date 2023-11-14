@@ -93,6 +93,7 @@ const leaveComputer = async(req,res)=>{
     computeri.freeComputers++;
     await computeri.save();
     deleteUser.computer="";
+    await deleteUser.save();
 
   
 
