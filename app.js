@@ -72,6 +72,11 @@ app.get("/",(req,res)=>{
         }
             res.render("index.ejs",data);
         });
+app.get('/contact',(req,res)=>{
+  res.render("contact.ejs",{
+    date:new Date().getFullYear(),
+  });
+})
 
 
 app.get("/login",(req,res)=>{
