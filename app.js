@@ -369,7 +369,7 @@ app.get('/regusers',async(req,res)=>{
       posts:user, // key is the variable in the ejs file jaske endar value pas hoga 
       date: new Date().getFullYear(),
       errors:false,
-      id:comp._id;
+      id:comp._id
       
       
   });
