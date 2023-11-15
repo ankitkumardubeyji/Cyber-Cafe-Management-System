@@ -19,8 +19,8 @@
 <%posts.forEach((item)=>{
     if(item.role=="USER" && item.active==true){
     %>
-    <div class="card" id="special"   style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;>
-        <img src="/GI.png" class="card-img-top" alt="..."> <%# path should always be given wrt to the public folder %>
+    <div class="card" id="special"   style="background: linear-gradient(rgba(0,0,0,0.6),#4d4dff); color: white;">
+<img src="/<%= item.image %>" class="card-img-top" alt="..." width="50%" style="margin-left: 12vw;"> 
         
         <div class="card-body">
           <h5 class="card-title">User Details</h5>
