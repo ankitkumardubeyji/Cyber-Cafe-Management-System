@@ -61,7 +61,7 @@ app.get("/",(req,res)=>{
         date:new Date().getFullYear(),
         errors:false,
     }
-        res.render("index.ejs",data);
+        res.render("registerPage.ejs",data);
     });
 
     app.get("/register",(req,res)=>{
@@ -70,13 +70,8 @@ app.get("/",(req,res)=>{
             date:new Date().getFullYear(),
             errors:false,
         }
-            res.render("index.ejs",data);
+            res.render("registerPage.ejs",data);
         });
-app.get('/contact',(req,res)=>{
-  res.render("contact.ejs",{
-    date:new Date().getFullYear(),
-  });
-})
 
 
 app.get("/login",(req,res)=>{
@@ -86,6 +81,12 @@ app.get("/login",(req,res)=>{
     }
         res.render("loginPage.ejs",data);
 })  
+
+app.get('/contact',(req,res)=>{
+  res.render("contact.ejs",{
+    date:new Date().getFullYear(),
+  });
+})
 
 app.get('/forget',(req,res)=>{
     const data = {
@@ -364,6 +365,7 @@ app.get('/regusers',async(req,res)=>{
       posts:user, // key is the variable in the ejs file jaske endar value pas hoga 
       date: new Date().getFullYear(),
       errors:false,
+      add:false,
       
       
   })});
@@ -377,12 +379,13 @@ app.get('/regusers',async(req,res)=>{
       id:comp._id
       
       
-  });
+  })});
 
   app.get('/createUser',(req,res)=>{
+    
     console.log("here in ");
     res.render("AddbyAdmin.ejs",{
-      posts:user, // key is the variable in the ejs file jaske endar value pas hoga 
+      
       date: new Date().getFullYear(),
       errors:false,
       
@@ -393,7 +396,7 @@ app.get('/regusers',async(req,res)=>{
 
 
 
-});
+
 
 app.post("/leave/:id",leaveComputer);
 
