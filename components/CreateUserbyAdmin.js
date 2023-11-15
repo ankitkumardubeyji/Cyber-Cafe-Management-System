@@ -60,10 +60,15 @@ const createUser = async(req,res)=>{
       }
       
       console.log("hine tak holo create"); 
+
      res.render("RegisteredUser.ejs",{
          posts:user, // key is the variable in the ejs file jaske endar value pas hoga 
          date: new Date().getFullYear(),
+         add:true,
          errors:false,
+         err:"successfully added the new user",
+         errormsg:"Please check all the users",
+         src:"https://tse1.mm.bing.net/th?id=OIP.1jkmnxXg6sT_ifiehDLgngHaHa&pid=Api&rs=1&c=1&qlt=95&w=123&h=123",
          
          
      });
