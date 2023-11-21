@@ -270,7 +270,7 @@ app.post("/submit",async(req,res)=>{
       title:req.body["postTitle"],
       body:req.body.postBody,
       time:new Date().toLocaleDateString()+" "+new Date().toLocaleTimeString().substr(0,7),
-  }
+  });
         console.log(new Date().toLocaleDateString()+" "+new Date().toLocaleTimeString().substr(0,7));                   
                                
   // saving the new document inside the collection 
