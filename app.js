@@ -235,7 +235,7 @@ const Item1 = new Item({
         }
         else{
             res.render("Feedback.ejs",{
-                homeContent:"I love you",
+                homeContent:"ok",
                 posts:Items, // key is the variable in the ejs file jaske endar value pas hoga 
                 date: new Date().getFullYear(),
                 errors:false,
@@ -270,7 +270,9 @@ app.post("/submit",async(req,res)=>{
       title:req.body["postTitle"],
       body:req.body.postBody,
       time:new Date().toLocaleDateString()+" "+new Date().toLocaleTimeString().substr(0,7),
-  })    
+  }
+        console.log(new Date().toLocaleDateString()+" "+new Date().toLocaleTimeString().substr(0,7));                   
+                               
   // saving the new document inside the collection 
   newItem.save();        
   res.render("Feedback.ejs",{
